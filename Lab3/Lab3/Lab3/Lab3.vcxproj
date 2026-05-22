@@ -163,9 +163,6 @@
   <ItemGroup>
     <ResourceCompile Include="Lab3.rc" />
   </ItemGroup>
-  <ItemGroup>
-    <Font Include="..\..\..\..\..\..\..\Downloads\mocha_choco\MochaChoco.otf" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
     <Import Project="..\packages\AllegroDeps.1.16.0\build\native\AllegroDeps.targets" Condition="Exists('..\packages\AllegroDeps.1.16.0\build\native\AllegroDeps.targets')" />

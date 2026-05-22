@@ -6,6 +6,9 @@
 #include <iostream>
 #include <vector>
 
+
+#include <filesystem>
+
 using namespace std;
 
 ALLEGRO_COLOR random_color() {
@@ -24,6 +27,8 @@ int main(int argc, char** argv) {
         al_show_native_message_box(NULL, "Error!", "Allegro has failed to initialize.", 0, 0,ALLEGRO_MESSAGEBOX_ERROR);
         return -1;
     }
+
+    cout << "Working directory: " << std::filesystem::current_path() << endl;
 
     if (!al_install_mouse())
     {
@@ -54,7 +59,7 @@ int main(int argc, char** argv) {
 
     al_init_font_addon();
     al_init_ttf_addon();
-    ALLEGRO_FONT* mocha_font = al_load_font("MochaChoco.otf", 64, 0);
+    ALLEGRO_FONT* mocha_font = al_load_font("Fonts/MochaChoco.otf", 64, 0);
 
     if (!mocha_font) {
         al_show_native_message_box(Screen, "Warning", "Failed to load font. Using built-in font.", 0, 0,ALLEGRO_MESSAGEBOX_WARN);
@@ -138,7 +143,7 @@ int main(int argc, char** argv) {
 
         //text
         al_draw_textf(mocha_font, text_color, 50, 50, 0, "mouse x: %i", pos_x);
-        al_draw_textf(mocha_font, text_color, 50, 75, 0, "mouse y: %i", pos_y);
+        al_draw_textf(mocha_font, text_color, 50, 105, 0, "mouse y: %i", pos_y);
 
         al_flip_display();
     }
